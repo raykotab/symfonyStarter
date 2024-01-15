@@ -3,6 +3,7 @@
 {% block body %}
 <div>The current twig message is:</div>
 <div>
-    <b>{{ message }}</b>
+    <b>{{ message.message }}</b>
+    <b>{{ include('hello/_message.html.twig')}}</b>
 </div>
 {% endblock %}

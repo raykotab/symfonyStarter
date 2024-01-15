@@ -10,7 +10,10 @@ class HelloController extends AbstractController
 {
 
     private array $messages = [
-        "Hello", "Hi", "Hola", "Hallo"
+        ['message' => "Hello", 'created' => '2023/06/12'],
+        ['message' => "Hola", 'created' => '2022/05/12'],
+        ['message' => "Hallo", 'created' => '2023/04/12'],
+        ['message' => "Hi", 'created' => '2022/03/12'] 
     ];
 
     #[Route('/{limit<\d+>?3}', name:'app_index')]
@@ -25,8 +28,9 @@ class HelloController extends AbstractController
             [
                 'messages' => //\implode(
                     //',',
-                    \array_slice($this->messages, 0, $limit)
+                    /*\array_slice(*/$this->messages,// 0, $limit)
                 //)
+                'limit' => $limit
             ]
         );
     }

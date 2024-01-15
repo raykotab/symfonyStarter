@@ -4,8 +4,9 @@
 <div>
 The index twig says: </br>
     {% if messages|length > 0 %}
-        {% for message in messages %}
-            <div>{{ message }}</div>
+        {% for message in messages|slice(0, limit) %}
+            <div>{{ message.message }}</div>
+            {{ include('hello/_message.html.twig')}}    
         {% endfor %}
     {% else %}
         nothing to see 
