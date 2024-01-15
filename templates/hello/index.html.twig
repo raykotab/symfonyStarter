@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div>
+The index twig says: </br>
+    {% if messages|length > 0 %}
+        {% for message in messages %}
+            <div>{{ message }}</div>
+        {% endfor %}
+    {% else %}
+        nothing to see 
+    {% endif %}
+</div>
+{% endblock %}
